@@ -1,0 +1,35 @@
+/* Layout for the watch-only factory simulation. */
+:root {
+  --bg: #12151c;
+  --surface-solid: #171b24;
+  --surface-2: #1f2430;
+  --line-2: rgba(216, 222, 233, 0.17);
+  --text: #eceff4;
+  --text-2: #d8dee9;
+  --muted: #a3adbf;
+  --dim: #7f8a9e;
+  --warn: #ebcb8b;
+  --bad: #d06b75;
+  --bad-text: #f2a0a8;
+  --accent: #88c0d0;
+  --sidebar-width: 296px;
+  --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; height: 100%; overflow: hidden;
+  background: var(--bg); color: var(--text);
+  font-family: var(--font-ui); font-size: 15px; line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, p { margin: 0; }
+#app { position: fixed; inset: 0; }
+#world { position: absolute; inset: 0 0 0 var(--sidebar-width); overflow: hidden; background: #1b1f2a; }
+#world canvas { display: block; width: 100% !important; height: 100% !important; }
+#ui { position: static; }
+.world-fallback { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); }
+[hidden] { display: none !important; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+* { scrollbar-width: thin; scrollbar-color: #343b4d transparent; }
